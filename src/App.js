@@ -1,21 +1,18 @@
-// import logo from './logo.svg';
-// import './App.css';
-import { useEffect, useState } from "react";
-import axios from "axios";
-import GridWrapper from "./components/GridWrapper";
-import Header from "./components/Header";
+import { useState } from "react";
+import GridWrapper from "./AppGrid";
+import Header from "./Topper";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { green } from "@mui/material/colors";
-import Pattern from "./Pattern.png";
-import Logo from "./Logo.png";
+import Pattern from "./pattern.png";
+import Logo from "./logo.png";
 import photo from "./photo.png";
-import Icon from "./Icon.png";
+import Icon from "./icon.png";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import image from "./Image.png";
+import image from "./image.png";
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -37,21 +34,6 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 function App() {
-  const [info, setInfo] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get(
-        "https://stage.harbour.space/api/v1/scholarship_pages/data-science-apprenticeship-zeptolab"
-      );
-      if (data !== "") {
-        const arrayObj = data;
-        setInfo(arrayObj);
-        console.log(data);
-      }
-    };
-
-    fetchData();
-  }, []);
   const [open, setOpen] = useState(true);
 
   const handleClick = () => {
@@ -77,7 +59,6 @@ function App() {
         ></Header>{" "}
         <div
           style={{
-            //   gridColumn: "span 4",
             backgroundImage: `url(${Icon})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top  62.98px  left 421.98px  ",
@@ -167,13 +148,11 @@ function App() {
         <div
           style={{
             marginLeft: "0px",
-            //gridColumn: "5/ span 8",
             backgroundImage: `url(${Pattern})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top  513px  right 0px",
             backgroundSize: "560px 606px",
             height: "800px",
-            // width: "799px",
           }}
         >
           <div style={{ display: "flex" }}>
@@ -182,18 +161,15 @@ function App() {
               src={Logo}
               style={{
                 marginLeft: "113.8px",
-                // marginRight: "14.42%",
                 width: "80px",
                 height: "80px",
                 marginTop: "161px",
-                //  display: "flex",
                 justifyContent: "flex-start",
               }}
             />
             <div style={{ justifyContent: "center" }}>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
                   marginTop: "169px",
                   marginLeft: "40px",
                   font: "Apercu Pro",
@@ -204,15 +180,12 @@ function App() {
                   fontSize: "18px",
                   letterSpacing: "-0.18 px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
                 }}
               >
                 Powered by:
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
                   marginTop: "10px",
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
@@ -222,9 +195,6 @@ function App() {
                   fontSize: "27px",
                   letterSpacing: "-0.27px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 Zeptolab
@@ -244,7 +214,6 @@ function App() {
           >
             <Typography
               style={{
-                //  marginLeft: "200px",
                 marginTop: "10px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -254,16 +223,12 @@ function App() {
                 fontSize: "16px",
                 letterSpacing: "-0.145455px",
                 lineHeight: "24px",
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               Application closes in
             </Typography>
             <Typography
               style={{
-                //  marginLeft: "200px",
                 marginTop: "16px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -274,10 +239,6 @@ function App() {
                 letterSpacing: "-0.145455px",
                 lineHeight: "24px",
                 opacity: "0.5",
-
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               6 Day : 22 Hrs : 56 Min : 13 Seg
@@ -298,7 +259,6 @@ function App() {
             <div style={{ justifyContent: "flex-start" }}>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
                   marginTop: "40px",
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
@@ -308,17 +268,12 @@ function App() {
                   fontSize: "16px",
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 Location
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -328,17 +283,12 @@ function App() {
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
                   opacity: "0.5",
-
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 Bangkok
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
                   marginTop: "23px",
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
@@ -348,17 +298,12 @@ function App() {
                   fontSize: "16px",
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 Start date
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -368,9 +313,6 @@ function App() {
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
                   opacity: "0.5",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 30 June 2020
@@ -385,8 +327,6 @@ function App() {
             >
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -395,17 +335,12 @@ function App() {
                   fontSize: "16px",
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 Duration
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -416,17 +351,12 @@ function App() {
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
                   opacity: "0.5",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 1 Year Full-Time
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -435,17 +365,12 @@ function App() {
                   fontSize: "16px",
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 End date
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -456,9 +381,6 @@ function App() {
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
                   opacity: "0.5",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 3 Aug 2020
@@ -512,7 +434,6 @@ function App() {
           >
             <Typography
               style={{
-                //  marginLeft: "200px",
                 width: "479px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -522,16 +443,12 @@ function App() {
                 fontSize: "48px",
                 letterSpacing: "-0.145455px",
                 lineHeight: "56px",
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               About the apprenticeship
             </Typography>
             <Typography
               style={{
-                //  marginLeft: "200px",
                 marginTop: "40px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -543,9 +460,6 @@ function App() {
                 letterSpacing: "-0.145455px",
                 lineHeight: "24px",
                 opacity: "0.5",
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               Our scholarships are designed to give talented and driven young
@@ -572,7 +486,6 @@ function App() {
             {" "}
             <Typography
               style={{
-                //  marginLeft: "200px",
                 marginTop: "32px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -582,16 +495,12 @@ function App() {
                 fontSize: "16px",
                 letterSpacing: "-0.145455px",
                 lineHeight: "24px",
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               Scholarship value
             </Typography>
             <Typography
               style={{
-                //  marginLeft: "200px",
                 marginTop: "33px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -601,10 +510,6 @@ function App() {
                 fontSize: "48px",
                 letterSpacing: "-0.145455px",
                 lineHeight: "24px",
-
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               €31,300
@@ -621,7 +526,6 @@ function App() {
                 <div style={{ justifyContent: "flex-start" }}>
                   <Typography
                     style={{
-                      //  marginLeft: "200px",
                       marginTop: "61px",
                       marginLeft: "40px",
                       fontFamily: "apercu-font",
@@ -631,17 +535,12 @@ function App() {
                       fontSize: "16px",
                       letterSpacing: "-0.145455px",
                       lineHeight: "24px",
-                      // display: "flex",
-                      // alignItems: "flex-start",
-                      // justifyContent: "center",
                     }}
                   >
                     Tuition covered
                   </Typography>
                   <Typography
                     style={{
-                      //  marginLeft: "200px",
-
                       marginLeft: "44px",
                       fontFamily: "apercu-font",
                       fontStyle: "normal",
@@ -651,9 +550,6 @@ function App() {
                       letterSpacing: "-0.145455px",
                       lineHeight: "24px",
                       opacity: "0.5",
-                      // display: "flex",
-                      // alignItems: "flex-start",
-                      // justifyContent: "center",
                     }}
                   >
                     {" "}
@@ -663,7 +559,6 @@ function App() {
                 <div style={{ justifyContent: "flex-end" }}>
                   <Typography
                     style={{
-                      //  marginLeft: "200px",
                       marginTop: "61px",
                       marginLeft: "40px",
                       fontFamily: "apercu-font",
@@ -673,17 +568,12 @@ function App() {
                       fontSize: "16px",
                       letterSpacing: "-0.145455px",
                       lineHeight: "24px",
-                      // display: "flex",
-                      // alignItems: "flex-start",
-                      // justifyContent: "center",
                     }}
                   >
                     Remaining
                   </Typography>
                   <Typography
                     style={{
-                      //  marginLeft: "200px",
-
                       marginLeft: "44px",
                       fontFamily: "apercu-font",
                       fontStyle: "normal",
@@ -693,9 +583,6 @@ function App() {
                       letterSpacing: "-0.145455px",
                       lineHeight: "24px",
                       opacity: "0.5",
-                      // display: "flex",
-                      // alignItems: "flex-start",
-                      // justifyContent: "center",
                     }}
                   >
                     {" "}
@@ -705,7 +592,6 @@ function App() {
               </div>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
                   marginTop: "23px",
                   marginLeft: "40px",
                   fontFamily: "apercu-font",
@@ -715,17 +601,12 @@ function App() {
                   fontSize: "16px",
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 Living stipend
               </Typography>
               <Typography
                 style={{
-                  //  marginLeft: "200px",
-
                   marginLeft: "44px",
                   fontFamily: "apercu-font",
                   fontStyle: "normal",
@@ -735,9 +616,6 @@ function App() {
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
                   opacity: "0.5",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 {" "}
@@ -760,7 +638,6 @@ function App() {
               >
                 <Typography
                   style={{
-                    //  marginLeft: "200px",
                     marginTop: "32px",
                     marginLeft: "25px",
                     fontFamily: "apercu-font",
@@ -770,9 +647,6 @@ function App() {
                     fontSize: "16px",
                     letterSpacing: "-0.145455px",
                     lineHeight: "24px",
-                    // display: "flex",
-                    // alignItems: "flex-start",
-                    // justifyContent: "center",
                   }}
                 >
                   Study commitment
@@ -790,9 +664,6 @@ function App() {
                     letterSpacing: "-0.145455px",
                     lineHeight: "24px",
                     opacity: "0.5",
-                    // display: "flex",
-                    // alignItems: "flex-start",
-                    // justifyContent: "center",
                   }}
                 >
                   {" "}
@@ -818,9 +689,6 @@ function App() {
                     letterSpacing: "-0.145455px",
                     lineHeight: "24px",
                     opacity: "0.5",
-                    // display: "flex",
-                    // alignItems: "flex-start",
-                    // justifyContent: "center",
                   }}
                 >
                   You will complete 15 modules to graduate. Daily classes are 3
@@ -840,7 +708,6 @@ function App() {
               >
                 <Typography
                   style={{
-                    //  marginLeft: "200px",
                     marginTop: "32px",
                     marginLeft: "25px",
                     fontFamily: "apercu-font",
@@ -850,9 +717,6 @@ function App() {
                     fontSize: "16px",
                     letterSpacing: "-0.145455px",
                     lineHeight: "24px",
-                    // display: "flex",
-                    // alignItems: "flex-start",
-                    // justifyContent: "center",
                   }}
                 >
                   Work commitment
@@ -870,9 +734,6 @@ function App() {
                     letterSpacing: "-0.145455px",
                     lineHeight: "24px",
                     opacity: "0.5",
-                    // display: "flex",
-                    // alignItems: "flex-start",
-                    // justifyContent: "center",
                   }}
                 >
                   4 hours / day
@@ -897,9 +758,6 @@ function App() {
                     letterSpacing: "-0.145455px",
                     lineHeight: "24px",
                     opacity: "0.5",
-                    // display: "flex",
-                    // alignItems: "flex-start",
-                    // justifyContent: "center",
                   }}
                 >
                   Immerse yourself in the professional world during your
@@ -992,9 +850,6 @@ function App() {
                   letterSpacing: "-0.145455px",
                   lineHeight: "24px",
                   opacity: "0.5",
-                  // display: "flex",
-                  // alignItems: "flex-start",
-                  // justifyContent: "center",
                 }}
               >
                 You’ll be guaranteed a 1 year contract with SCG upon graduation.
@@ -1005,7 +860,6 @@ function App() {
         <div>
           <div
             style={{
-
               width: "800px",
               height: "459.92px",
               display: "flex",
@@ -1023,143 +877,6 @@ function App() {
                       width: "80px",
                       height: "80px",
                       borderRadius: "50%",
-                      marginTop: "1px",
-                      marginRight: "60px",
-                    }}
-                  />
-                }
-                sideTitle={
-                  <div
-                    style={{
-                      marginLeft: "64px",
-                      fontFamily: "apercu-font",
-                      color: "#535353",
-                      fontSize: "16px",
-                      letterSpacing: "-0.145455px",
-                      lineHeight: "24px",
-                      width: "230px",
-                    }}
-                  >
-                    <Typography
-                      style={{
-                        marginTop: "21px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Irene Pereyra
-                    </Typography>
-                    <Typography> Interaction Design Fellow ‘19</Typography>
-                  </div>
-                }
-              ></Header>
-              <div
-                style={{
-                  gridColumn: "span 12",
-                  backgroundColor: "#FBFBFB",
-                  width: "800px",
-                  marginTop: "0px",
-                  height: "310.54px",
-                }}
-              >
-                <Typography
-                
-                  style={{
-                    marginLeft: "700px",
-                    marginTop: "56.02px",
-                    width: "440px",
-                    font: "Apercu Pro",
-                    color: "#535353",
-                    fontWeight: "300px",
-                    fontSize: "22px",
-                    letterSpacing: "-0.33 px",
-                    lineHeight: "32px",
-                    opacity: "0.7",
-                  }}
-
-                  
-                >
-                  This Fellowship was a turning point in my career. I wouldn’t
-                  be where I am today without the financial support and
-                  experienced offered through the program.
-                </Typography>
-                <Typography
-                  style={{
-                    marginLeft: "700px",
-                    marginTop: "31.02px",
-                    width: "440px",
-                    font: "Apercu Pro",
-                    color: "#535353",
-                    fontWeight: "300px",
-                    fontSize: "22px",
-                    letterSpacing: "-0.33 px",
-                    lineHeight: "32px",
-                    opacity: "0.7",
-                  }}
-                >
-                  Education · B.A. Visual Design
-                </Typography>
-              </div>
-            </GridWrapper>
-            <GridWrapper headerHeight="148px">
-              <Header
-                headerColor="#FFFFFF"
-                title={
-                  <img
-                    src={image}
-                    style={{
-
-                      width: "80px",
-                      height: "80px",
-                      borderRadius: "50%",
-                      marginTop: "35px",
-                      marginRight: "60px",
-                    }}
-                  />
-                }
-                sideTitle={
-                  <div
-                    style={{
-                      marginLeft: "64px",
-                      fontFamily: "apercu-font",
-                      color: "#535353",
-                      fontSize: "16px",
-                      letterSpacing: "-0.145455px",
-                      lineHeight: "24px",
-                      width: "230px",
-                    }}
-                  >
-                    <Typography
-                      style={{
-                        marginTop: "21px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Irene Pereyra
-                    </Typography>
-                    <Typography> Interaction Design Fellow ‘19</Typography>
-                  </div>
-                }
-              ></Header>
-              <div
-                style={{
-                  gridColumn: "span 12",
-                  backgroundColor: "#FBFBFB",
-                  width: "800px",
-                  marginTop: "0px",
-                  height: "310.54px",
-                }}
-              ></div>
-            </GridWrapper>
-            <GridWrapper headerHeight="148px">
-              <Header
-                headerColor="#FFFFFF"
-                title={
-                  <img
-                    src={image}
-                    style={{
-                      width: "80px",
-                      height: "80px",
-                      borderRadius: "50%",
                       marginTop: "35px",
                       marginRight: "60px",
                     }}
@@ -1201,7 +918,6 @@ function App() {
             </GridWrapper>
           </div>
         </div>
-        {/* </div> */}
       </GridWrapper>
       <List
         style={{
@@ -1217,9 +933,7 @@ function App() {
           <div style={{ display: "flex", flexDirection: "row" }}>
             <ListSubheader
               style={{
-                marginTop:"120px",
-
-                //  marginLeft: "200px",
+                marginTop: "120px",
                 width: "479px",
                 marginLeft: "40px",
                 fontFamily: "apercu-font",
@@ -1229,17 +943,16 @@ function App() {
                 fontSize: "48px",
                 letterSpacing: "-0.145455px",
                 lineHeight: "56px",
-                // display: "flex",
-                // alignItems: "flex-start",
-                // justifyContent: "center",
               }}
             >
               Frequently asked questions
             </ListSubheader>
-            <Typography style={{  marginTop:"120px", marginLeft: "285px" }}>Filter by:</Typography>
+            <Typography style={{ marginTop: "120px", marginLeft: "285px" }}>
+              Filter by:
+            </Typography>
             <Button
               style={{
-                marginTop:"120px",
+                marginTop: "120px",
 
                 width: "235px",
                 height: "58px",
@@ -1259,53 +972,62 @@ function App() {
         }
       >
         <div
-         style={{
-          backgroundColor: "#FFFFFF",
-          marginTop: "30px ",
-          marginLeft: "201px",
-          width: "320px",
-          height: "524px",
-          justifyContent: "flex-start",
-        }}
-
-    
+          style={{
+            backgroundColor: "#FFFFFF",
+            marginTop: "30px ",
+            marginLeft: "201px",
+            width: "320px",
+            height: "524px",
+            justifyContent: "flex-start",
+          }}
         >
-<h1> Program conditions </h1>
+          <h1> Program conditions </h1>
 
-<div  style={{
-                    width: "320px",
-                    height: "524px",
-          marginTop: "60px ",
+          <div
+            style={{
+              width: "320px",
+              height: "524px",
+              marginTop: "60px ",
 
-                    marginLeft: "433px",
-                    fontWeight: "300px",
-                    fontSize: "16px",
-                    letterSpacing: "-0.145455px",
-                    lineHeight: "24px",
-                    opacity: "0.5",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
-                  }}
->
-
-<p 
-          > <h1> What are my obligations? </h1>
-The majority of our students receive numerous job offers at the end of the second academic year of their Bachelor's programme and at the end of the first academic year of their Master's programme. The best applicants receive an offer from our industrial partners at the beginning of their programmes.
-Harbour.Space is highly recognized among innovative employers and is strategic partner of B.Grimm multi- industry corporation with 140 years of history in Thailand. Together we insure students get the best knowledge about the current job market opportunities.
-We offer our students paid internships options during studies jointly with our industrial partners.
-Employers that hired graduates of Harbour.Space in the past include Google, IBM, Accenture, Typeform, Frog, and other tech centric companies. Our industry specific employability report could be provided to you separately during the admission process.</p>
-         
-  </div>
+              marginLeft: "433px",
+              fontWeight: "300px",
+              fontSize: "16px",
+              letterSpacing: "-0.145455px",
+              lineHeight: "24px",
+              opacity: "0.5",
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+            }}
+          >
+            <p>
+              {" "}
+              <h1> What are my obligations? </h1>
+              The majority of our students receive numerous job offers at the
+              end of the second academic year of their Bachelor's programme and
+              at the end of the first academic year of their Master's programme.
+              The best applicants receive an offer from our industrial partners
+              at the beginning of their programmes. Harbour.Space is highly
+              recognized among innovative employers and is strategic partner of
+              B.Grimm multi- industry corporation with 140 years of history in
+              Thailand. Together we insure students get the best knowledge about
+              the current job market opportunities. We offer our students paid
+              internships options during studies jointly with our industrial
+              partners. Employers that hired graduates of Harbour.Space in the
+              past include Google, IBM, Accenture, Typeform, Frog, and other
+              tech centric companies. Our industry specific employability report
+              could be provided to you separately during the admission process.
+            </p>
           </div>
-          
+        </div>
+
         <ListItemButton
-         style={{
-          width: "800px",
-          marginTop: "270px",
-        }}
-        
-        onClick={handleClick}>
+          style={{
+            width: "800px",
+            marginTop: "270px",
+          }}
+          onClick={handleClick}
+        >
           <ListItemText primary="Program conditions" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
@@ -1339,7 +1061,6 @@ Employers that hired graduates of Harbour.Space in the past include Google, IBM,
           </List>
         </Collapse>
       </List>
-     
     </div>
   );
 }
