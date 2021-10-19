@@ -8,11 +8,9 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateRows: (props) =>
       `[header] ${
         props.headerHeight ? props.headerHeight : "128px"
-      } [body] auto `,
+      } [body] auto`,
     gridColumnGap: theme.spacing(5),
-    gridRowGap: theme.spacing(5),
-    padding: "0",
-    margin: "0",
+    //  gridRowGap: theme.spacing(5),
   },
 }));
 

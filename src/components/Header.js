@@ -5,73 +5,49 @@ import HeaderGrid from "./HeaderGrid";
 
 const useStyles = makeStyles((theme) => ({
   header: {
+    marginTop: theme.spacing(3),
     gridArea: "header / span 12",
-    backgroundColor: (props) =>
-      `${props.headerColor ? props.headerColor : "#685DC5"}`,
   },
   title: {
-    marginTop: "50px",
-    marginLeft: "50px",
+    gridColumn: "5/ span 4",
+    gridRow: "title",
+    color: "#58595b",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  menu: {
     gridColumn: "1/ span 3",
-    gridRow: "title",
-    color: "#FFFFFF",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  sideTitle: {
-    marginTop: "50px",
-    gridColumn: "3/ span 3",
-    gridRow: "title",
-    color: "#FFFFFF",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  applyButton: {
-    gridRow: "title",
-    color: "#FFFFFF",
-    gridColumn: "10/ 12",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    gridRow: "menu",
+    marginBottom: theme.spacing(5),
   },
   action: {
-    marginTop: "50px",
-    color: "#FFFFFF",
-    gridColumn: "12/ 12",
-
+    gridColumn: "8/ 12",
+    gridRow: "action",
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-end",
     justifyContent: "center",
+  },
+  returnButton: {
+    gridColumn: "12 / 12",
+    gridRow: "menu",
+    marginBottom: theme.spacing(5),
   },
 }));
 
 export default function Header(props) {
-  const {
-    children,
-    breadcrumbs,
-    action,
-    title,
-    sideTitle,
-    applyButton,
-    headerColor,
-  } = props;
-  const classes = useStyles({ headerColor });
+  const { children, menu, action, title, returnButton } = props;
+  const theme = useTheme();
+  const classes = useStyles(theme);
   return (
     <div className={classes.header}>
       <HeaderGrid>
         <Typography className={classes.title} variant="h4" component="h2">
           {children}
         </Typography>
-        {breadcrumbs && (
-          <div className={classes.breadcrumb}>
-            <span> {breadcrumbs}</span>
-          </div>
-        )}
-        {applyButton && (
-          <div className={classes.applyButton}>
-            <span> {applyButton}</span>
+        {menu && (
+          <div className={classes.menu}>
+            <span> {menu}</span>
           </div>
         )}
         {title && (
@@ -79,16 +55,16 @@ export default function Header(props) {
             <span> {title}</span>
           </div>
         )}
-        {sideTitle && (
-          <div className={classes.sideTitle}>
-            <span> {sideTitle}</span>
-          </div>
-        )}
         {action && (
           <div className={classes.action}>
             <span> {action}</span>
           </div>
-        )}{" "}
+        )}
+        {returnButton && (
+          <div className={classes.returnButton}>
+            <span> {returnButton}</span>
+          </div>
+        )}
       </HeaderGrid>
     </div>
   );
